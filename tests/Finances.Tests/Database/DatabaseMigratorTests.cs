@@ -14,7 +14,7 @@ public sealed class DatabaseMigratorTests : IAsyncLifetime
 
     public Task DisposeAsync() => postgres.DisposeAsync().AsTask();
 
-    [Fact(Skip = "Requiere Docker corriendo para levantar PostgreSQL con Testcontainers.")]
+    [Fact]
     public void Run_ShouldApplyDbUpScripts_WhenPostgreSqlIsAvailable()
     {
         var result = DatabaseMigrationRunner.Run(postgres.GetConnectionString());
