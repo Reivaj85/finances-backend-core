@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: finances-postgres
+    environment:
+      POSTGRES_DB: ${FINANCES_POSTGRES_DB}
+      POSTGRES_USER: ${FINANCES_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${FINANCES_POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - finances_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  finances_postgres_data:

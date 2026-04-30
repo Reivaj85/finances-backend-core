@@ -1,0 +1,28 @@
+# --- Compilacion y salidas ---
+**/bin/
+**/obj/
+**/publish/
+**/TestResults/
+
+# --- Dependencias de paquetes ---
+**/packages/
+**/node_modules/
+
+# --- Archivos de usuario y entornos ---
+**/.vs/
+**/.idea/
+**/.vscode/
+**/*.user
+**/*.userosscache
+**/*.sln.doccache
+
+# --- Archivos de base de datos y logs ---
+**/*.log
+**/*.sqlite
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# --- Archivos de sistema ---
+**/.DS_Store
+**/Thumbs.db

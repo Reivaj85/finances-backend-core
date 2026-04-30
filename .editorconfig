@@ -1,0 +1,25 @@
+root = true
+
+[*.cs]
+# ==========================================
+# Limpieza de Código (Code Quality)
+# ==========================================
+
+# IDE0005: Eliminar directivas using innecesarias
+dotnet_diagnostic.IDE0005.severity = warning
+
+# CS0168 / CS0219: Variable declarada pero nunca usada
+dotnet_diagnostic.CS0168.severity = warning
+dotnet_diagnostic.CS0219.severity = warning
+
+# IDE0059: Asignación de valor innecesaria (la variable se asigna pero no se lee)
+dotnet_diagnostic.IDE0059.severity = warning
+
+# IDE0052: Miembro privado no leído (variables a nivel de clase)
+dotnet_diagnostic.IDE0052.severity = warning
+
+# ==========================================
+# Preferencias de estilo
+# ==========================================
+# Forzar File-scoped namespaces (Opcional, pero recomendado en tu arquitectura)
+csharp_style_namespace_declarations = file_scoped:warning
