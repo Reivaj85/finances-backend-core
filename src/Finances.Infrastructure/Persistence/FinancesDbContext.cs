@@ -11,6 +11,12 @@ public sealed class FinancesDbContext(DbContextOptions<FinancesDbContext> option
 
     public DbSet<RecurringExpenseRecord> RecurringExpenses => Set<RecurringExpenseRecord>();
 
+    public DbSet<IncomeSourceRecord> IncomeSources => Set<IncomeSourceRecord>();
+
+    public DbSet<IncomeRecordRecord> IncomeRecords => Set<IncomeRecordRecord>();
+
+    public DbSet<MonthlyCashPressureView> MonthlyCashPressure => Set<MonthlyCashPressureView>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(FinancesDbContext).Assembly);

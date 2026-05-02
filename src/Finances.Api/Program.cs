@@ -2,6 +2,8 @@ using Finances.Api.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddLocalEnvironmentFile();
+
 builder.Services
     .AddApiDocumentation()
     .AddApiDependencies(builder.Configuration);

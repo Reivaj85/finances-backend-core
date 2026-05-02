@@ -1,3 +1,4 @@
+using Finances.Application.Common.Validation;
 using Finances.Domain.RecurringExpenses;
 using FluentValidation;
 
@@ -7,13 +8,13 @@ public sealed class CreateRecurringExpenseCommandValidator : AbstractValidator<C
 {
     public CreateRecurringExpenseCommandValidator()
     {
-        RuleFor(command => command.HouseholdId.Value)
-            .NotEmpty()
+        RuleFor(command => command.HouseholdId)
+            .Must(StronglyTypedIdValidation.HasValue)
             .WithErrorCode("RecurringExpense.HouseholdRequired")
             .WithMessage("El hogar es obligatorio.");
 
-        RuleFor(command => command.CategoryId.Value)
-            .NotEmpty()
+        RuleFor(command => command.CategoryId)
+            .Must(StronglyTypedIdValidation.HasValue)
             .WithErrorCode("RecurringExpense.CategoryRequired")
             .WithMessage("La categoría es obligatoria.");
 
